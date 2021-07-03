@@ -1,6 +1,7 @@
 
 ### React-Hook-Formサンプル
-- react-hook-form使ってみた
+- react-hook-form使ってみた(version:7.10.0)
+
 <br />
 
 <img width="316" alt="スクリーンショット 2021-07-03 13 32 41" src="https://user-images.githubusercontent.com/71884766/124342986-26dd9300-dc03-11eb-9c17-7316a9b25e20.png">
