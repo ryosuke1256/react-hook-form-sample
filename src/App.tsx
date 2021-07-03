@@ -15,6 +15,7 @@ function App() {
         firstName
         <input {...register('firstName')} /> {/* register an input */}
       </div>
+      {errors.firstName && <p>First name is required.</p>}
       <div>
         lastName
         <input {...register('lastName', { required: true })} />
@@ -25,6 +26,8 @@ function App() {
         <input {...register('age', { pattern: /\d+/ })} />
       </div>
       {errors.age && <p>Please enter number for age.</p>}
+      <input type="text" placeholder="Email" {...register("Email", {required: true, min: 8, pattern: /^\S+@\S+$/i})} />
+      {errors.Email && <p>The format of the email is incorrect.</p>}
       <input type="submit" />
     </form>
   );
