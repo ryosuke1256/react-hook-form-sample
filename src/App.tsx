@@ -10,10 +10,10 @@ function App() {
   const onSubmit = (data:any) => console.log(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{padding:'30px'}}>
       <div>
         firstName
-        <input {...register('firstName')} /> {/* register an input */}
+        <input {...register('firstName', { required: true})} />
       </div>
       {errors.firstName && <p>First name is required.</p>}
       <div>
@@ -26,8 +26,11 @@ function App() {
         <input {...register('age', { pattern: /\d+/ })} />
       </div>
       {errors.age && <p>Please enter number for age.</p>}
-      <input type="text" placeholder="Email" {...register("Email", {required: true, min: 8, pattern: /^\S+@\S+$/i})} />
-      {errors.Email && <p>The format of the email is incorrect.</p>}
+      <div>
+        email
+        <input type="text" placeholder="Email" {...register("Email", {required: true, min: 8, pattern: /^\S+@\S+$/i})} />
+        {errors.Email && <p>The format of the email is incorrect.</p>}
+      </div>
       <input type="submit" />
     </form>
   );
